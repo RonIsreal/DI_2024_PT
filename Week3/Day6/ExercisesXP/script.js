@@ -29,3 +29,4 @@ const people = ["Greg", "Mary", "Devon", "James"];
 const newPeople = people.filter(m => {
   return m !== 'Greg';
 });
+
