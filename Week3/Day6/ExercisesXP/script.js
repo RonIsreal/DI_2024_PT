@@ -26,7 +26,22 @@ const people = ["Greg", "Mary", "Devon", "James"];
 
 //PART I
 
-const newPeople = people.filter(m => {
+var newPeople = people.filter(m => {
   return m !== 'Greg';
 });
+
+console.log(newPeople);
+
+const jamesIndex = newPeople.indexOf("James");
+
+newPeople[jamesIndex] = "Jason";
+
+console.log(newPeople);
+
+newPeople.push("Ronny");
+
+const maryIndex = newPeople.indexOf("Mary");
+console.log(maryIndex);
+
+const peopleCopy = newPeople.slice();
 
