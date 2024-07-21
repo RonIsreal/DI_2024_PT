@@ -172,3 +172,69 @@ if (sumSaraDavidRent > danRent) {
 }
 
 console.log(danRent);
+
+/* Exercise 5 : Family
+Instructions
+Create an object called family with a few key value pairs.
+Using a for in loop, console.log the keys of the object.
+Using a for in loop, console.log the values of the object. */
+
+const family = {
+
+  Father : 'Ronny',
+  Mother : 'Lena',
+  Son : 'Max',
+  Daughter : 'Sophia'
+}
+
+for (let keys in family) { //Pretty much like Python, less the "let"
+  console.log(keys);
+}
+
+for (let keys in family) {
+  console.log(family[keys]); //Syntax to access the values of the keys
+}
+
+/* Exercise 6 : Rudolf
+Instructions
+const details = {
+  my: 'name',
+  is: 'Rudolf',
+  the: 'reindeer'
+}
+Given the object above and using a for loop, console.log “my name is Rudolf the reindeer” */
+
+const details = {
+  my: 'name',
+  is: 'Rudolf',
+  the: 'reindeer'
+};
+
+let fullPhrase = '';
+
+for (let key in details) {
+  fullPhrase += key + ' ' + details[key] + ' ';
+}
+
+fullPhrase = fullPhrase.trim(); //Removes the spaces at the beginning and at the end of the string
+
+console.log(fullPhrase);
+
+/* Exercise 7 : Secret Group
+Instructions
+const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
+A group of friends have decided to start a secret society. The society’s name will be the first letter of each of their names sorted in alphabetical order.
+Hint: a string is an array of letters
+Console.log the name of their secret society. The output should be “ABJKPS”*/
+
+const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
+const sortedNames = names.slice().sort(); //Sorted copy of names
+let secretName = "";
+
+for (let i = 0; i < sortedNames.length; i++) {
+    secretName += sortedNames[i][0];
+}
+
+console.log(secretName);
+
+
