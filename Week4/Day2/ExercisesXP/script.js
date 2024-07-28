@@ -242,4 +242,78 @@ Call the function totalVacationCost()
 
 Bonus: Instead of using a prompt inside the 3 first functions, only use a prompt inside the totalVacationCost() function. You need to change the 3 first functions, accordingly.*/
 
-//TO BE CONTINUED
+function hotelCost() {
+    let numNights;
+    let totalHotelCost;
+    while (true) {
+        const input = prompt("For how many nights would you like to stay?: ");
+        numNights = Number(input);
+        if (!isNaN(numNights) && numNights > 0) {
+            break;
+        } else {
+            alert("Please enter a valid number for the nights.");
+        }
+    }
+    totalHotelCost = numNights * 140;
+    //console.log(`Total Hotel Cost: $${totalHotelCost}`);
+    return totalHotelCost;
+}
+
+function planeRideCost() {
+    let destination = "";
+    let ticketCost;
+    while (true) {
+        destination = prompt("Please enter your destination:");
+        if (destination !== null && destination.trim() !== "") {
+            break;
+        } else {
+            alert("Please enter a valid destination.");
+        }
+    }
+    switch (destination.toLowerCase()) {
+        case "london":
+            ticketCost = 183;
+            break;
+        case "paris":
+            ticketCost = 220;
+            break;
+        default:
+            ticketCost = 300;
+    }
+    //console.log(`Your destination: ${destination}. Your ticket cost: $${ticketCost}`);
+    return { ticketCost, destination };
+}
+
+function rentalCarCost() {
+    let days;
+    let rentalCost = 0;
+    while (true) {
+        days = prompt("For how many days would you like to rent a car?: ");
+        const numDays = Number(days);
+        if (!isNaN(numDays) && numDays > 0) {
+            days = numDays;
+            break;
+        } else {
+            alert("Please enter a valid number for the days.");
+        }
+    }
+    if (days > 10) {
+        rentalCost = days * (40 * 0.95);
+    } else {
+        rentalCost = days * 40;
+    }
+    //console.log(`Total Rental Cost: $${rentalCost}`);
+    return rentalCost;
+}
+
+function totalVacationCost() {
+    const hotelCostValue = hotelCost();
+    const { ticketCost, destination } = planeRideCost();
+    const rentalCarCostValue = rentalCarCost();
+
+    const totalTripCost = hotelCostValue + ticketCost + rentalCarCostValue;
+    
+    console.log(`Your total trip cost to ${destination} will be $${totalTripCost}. Cost Breakdown: Plane Ticket: $${ticketCost}, Hotel Reservation: $${hotelCostValue}, Car Rental: $${rentalCarCostValue}.`);
+}
+
+totalVacationCost();
