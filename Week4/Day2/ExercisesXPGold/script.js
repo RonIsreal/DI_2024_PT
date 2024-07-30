@@ -42,3 +42,41 @@ if you input 'The Quick Brown Fox'
 the output should be 'tHE qUICK bROWN fOX'.*/
 
 
+
+function swapCases() {
+    let userInput = prompt("Please write something: ");
+    let inputInverted = '';
+    for (let letters of userInput) {
+        if (letters === letters.toLowerCase()) {
+            inputInverted += letters.toUpperCase();
+        }
+        else {
+            inputInverted += letters.toLowerCase();
+        }
+    }
+    console.log(inputInverted);
+};
+
+swapCases();
+
+/* Exercise 4 : Omnipresent value
+Instructions
+Create a function that determines whether an argument is omnipresent for a given array.
+A value is omnipresent if it exists in every subarray inside the main array.
+To illustrate:
+
+[[3, 4], [8, 3, 2], [3], [9, 3], [5, 3], [4, 3]]
+// 3 exists in every element inside this array, so is omnipresent.
+Examples
+
+isOmnipresent([[1, 1], [1, 3], [5, 1], [6, 1]], 1) ➞ true
+isOmnipresent([[1, 1], [1, 3], [5, 1], [6, 1]], 6) ➞ false*/
+
+function isOmnipresent(arr, val) {
+    for (let value of arr) {
+        if (!value.includes(val)) {
+            console.log(false);
+        }
+    }
+    console.log(true);
+};
