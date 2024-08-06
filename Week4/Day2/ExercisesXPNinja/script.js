@@ -87,4 +87,15 @@ Write a JS function that takes an array and returns a new array with only unique
 Example list=[1,2,3,3,3,3,4,5] newList = [1,2,3,4,5]
 Example list=[1,2,3,3,3,3,4,5] newList = [1,2,3,4,5]*/
 
-//TO BE CONTINUED
+const list=[1,2,3,3,3,3,4,5];
+
+function removeDuplicates(arr) {
+    let newList = [];
+    arr.forEach(element => {
+        if (!newList.includes(element)) {
+            newList.push(element);
+    }
+});
+return newList;
+}
+console.log(removeDuplicates(list));
