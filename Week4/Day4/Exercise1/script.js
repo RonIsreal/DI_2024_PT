@@ -11,3 +11,4 @@ Add the classes university and attendance to the first <ul>.
 
 const container = document.getElementById("container");
 console.log(container);
+
